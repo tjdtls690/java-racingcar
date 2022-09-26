@@ -7,6 +7,7 @@ import racing_car.step4.dto.CarDTO;
 import java.util.List;
 
 public class ResultView {
+    private static final String WINNERS_PRINT_FORM = "%s가 최종 우승했습니다.";
     private static final String RESULT_MESSAGE = "실행 결과";
     private static final String BAR = "-";
     private static final String COLON = " : ";
@@ -33,6 +34,6 @@ public class ResultView {
     }
     
     public static void winnersPrint(Referee referee) {
-        System.out.println(String.join(", ", referee.getWinnersName()) + "가 최종 우승했습니다.");
+        System.out.printf(WINNERS_PRINT_FORM, String.join(", ", referee.getWinnerNames()));
     }
 }
